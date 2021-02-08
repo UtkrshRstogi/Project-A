@@ -14,4 +14,3 @@ decentralized applications. It is a public blockchain that is it is visible to e
  World State->  Current owner of the asset.
  Transcation Log-> It holds where do we got this asset. we got it from A, and A got from X and so on.
  Here we use to store World State in couch DB or level DB. and Transaction Log in simple file.
-
