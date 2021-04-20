@@ -1,0 +1,39 @@
+{% load static %}
+
+<div class="navbar">
+    <div class="logo">
+        <h1>Insurance Karwao</h1>
+    </div>
+
+    <ul id="nav-links-1">
+        <li><a href="{% url 'home' %}">home</a></li>
+        <li><a href="#">about</a></li>
+        <p>|</p>
+        <li><a href="#">get in touch</a></li>
+    </ul>
+
+    <ul id="nav-links-2">
+
+        {% if user.is_authenticated %}
+            <li><a href="#">Hi {{ user.first_name }}</a></li>
+
+            <p>|</p>
+            <li><a href="#">Shop</a></li>
+            <p>|</p>
+            <li><a onclick="logout_message();" href="{% url 'logout' %}">Logout</a></li>
+            <script>
+                function logout_message() {
+                    confirm("Do you wish to Log Out?");
+                }
+            </script>
+
+        {% else %}
+            <li><a href="{% url 'sign-in' %}">login</a></li>
+            <p>|</p>
+            <li><a href="{% url 'user-register' %}">sign up</a></li>
+
+        {% endif %}
+
+
+    </ul>
+</div>
